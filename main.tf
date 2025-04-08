@@ -5,6 +5,12 @@ terraform {
       version = "4.24.0"
     }
   }
+  backend "azurerm" {
+    resource_group_name  = "VikiStorageRG"
+    storage_account_name = "vikistoragedevopsex"
+    container_name       = "taskboardcontainer"
+    key                  = "terraform.tfstate"
+  }
 }
 
 provider "azurerm" {
